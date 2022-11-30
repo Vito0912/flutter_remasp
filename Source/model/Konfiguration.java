@@ -20,7 +20,7 @@ public class Konfiguration {
     public Konfiguration() {
         setBz(0);
         registers = new ArrayList<Long>(1000);
-        for (int i = 0; i < 101; i++) {
+        for (int i = 0; i < 100; i++) {
             registers.add(i, 0L);
         }
         this.befehlsSpeicher = new ArrayList<Befehl>(1000);

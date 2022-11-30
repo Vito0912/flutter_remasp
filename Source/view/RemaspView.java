@@ -177,24 +177,145 @@ public class RemaspView extends javax.swing.JFrame {
     jScrollPane1.setViewportView(jTextPane);
     jTable1.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
     
-    // Neuerungen 21.08.2019
-    jTable1.setModel(new RemaspTableModel());
-    jTable1.setDefaultEditor(Long.class, new RemaspCellEditor());
-    
-    jTable1.setToolTipText("<html>\nIn der rechten Spalte kann die Registerbelegung vorgenommen werden.<br>\nEs können nur natürliche Zahlen reingeschrieben werden. <br>\nDie Eingabe muss zweimal mit der Enter-Taste bestätigt werden.");
-    jTable1.setGridColor(java.awt.Color.black);
-    jTable1.getTableHeader().setReorderingAllowed(false);
-    jTable1.setUpdateSelectionOnSort(false);
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Akk",  new Long(0)},
+                {"1",  new Long(0)},
+                {"2",  new Long(0)},
+                {"3",  new Long(0)},
+                {"4",  new Long(0)},
+                {"5",  new Long(0)},
+                {"6",  new Long(0)},
+                {"7",  new Long(0)},
+                {"8",  new Long(0)},
+                {"9",  new Long(0)},
+                {"10",  new Long(0)},
+                {"11",  new Long(0)},
+                {"12",  new Long(0)},
+                {"13",  new Long(0)},
+                {"14",  new Long(0)},
+                {"15",  new Long(0)},
+                {"16",  new Long(0)},
+                {"17",  new Long(0)},
+                {"18",  new Long(0)},
+                {"19",  new Long(0)},
+                {"20",  new Long(0)},
+                {"21",  new Long(0)},
+                {"22",  new Long(0)},
+                {"23",  new Long(0)},
+                {"24",  new Long(0)},
+                {"25",  new Long(0)},
+                {"26",  new Long(0)},
+                {"27",  new Long(0)},
+                {"28",  new Long(0)},
+                {"29",  new Long(0)},
+                {"30",  new Long(0)},
+                {"31",  new Long(0)},
+                {"32",  new Long(0)},
+                {"33",  new Long(0)},
+                {"34",  new Long(0)},
+                {"35",  new Long(0)},
+                {"36",  new Long(0)},
+                {"37",  new Long(0)},
+                {"38",  new Long(0)},
+                {"39",  new Long(0)},
+                {"40",  new Long(0)},
+                {"41",  new Long(0)},
+                {"42",  new Long(0)},
+                {"43",  new Long(0)},
+                {"44",  new Long(0)},
+                {"45",  new Long(0)},
+                {"46",  new Long(0)},
+                {"47",  new Long(0)},
+                {"48",  new Long(0)},
+                {"49",  new Long(0)},
+                {"50",  new Long(0)},
+                {"51",  new Long(0)},
+                {"52",  new Long(0)},
+                {"53",  new Long(0)},
+                {"54",  new Long(0)},
+                {"55",  new Long(0)},
+                {"56",  new Long(0)},
+                {"57",  new Long(0)},
+                {"58",  new Long(0)},
+                {"59",  new Long(0)},
+                {"60",  new Long(0)},
+                {"61",  new Long(0)},
+                {"62",  new Long(0)},
+                {"63",  new Long(0)},
+                {"64",  new Long(0)},
+                {"65",  new Long(0)},
+                {"66",  new Long(0)},
+                {"67",  new Long(0)},
+                {"68",  new Long(0)},
+                {"69",  new Long(0)},
+                {"70",  new Long(0)},
+                {"71",  new Long(0)},
+                {"72",  new Long(0)},
+                {"73",  new Long(0)},
+                {"74",  new Long(0)},
+                {"75",  new Long(0)},
+                {"76",  new Long(0)},
+                {"77",  new Long(0)},
+                {"78",  new Long(0)},
+                {"79",  new Long(0)},
+                {"80",  new Long(0)},
+                {"81",  new Long(0)},
+                {"82",  new Long(0)},
+                {"83",  new Long(0)},
+                {"84",  new Long(0)},
+                {"85",  new Long(0)},
+                {"86",  new Long(0)},
+                {"87",  new Long(0)},
+                {"88",  new Long(0)},
+                {"89",  new Long(0)},
+                {"90",  new Long(0)},
+                {"91",  new Long(0)},
+                {"92",  new Long(0)},
+                {"93",  new Long(0)},
+                {"94",  new Long(0)},
+                {"95",  new Long(0)},
+                {"96",  new Long(0)},
+                {"97",  new Long(0)},
+                {"98",  new Long(0)},
+                {"99",  new Long(0)}
+            },
+            new String [] {
+                "Nr", "Inhalt"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.Long.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jTable1.setDefaultEditor(Long.class, new RemaspCellEditor());
+        jTable1.setToolTipText("<html>\nIn der rechten Spalte kann die Regisgterbelegung vorgenommen werden.<br>\nEs können nur natürliche Zahlen reingeschrieben werden. <br>\nDie Eingabe muss zweimal mit der Enter-Taste bestätigt werden.");
+        jTable1.setGridColor(java.awt.Color.black);
+        jTable1.setRowHeight(20);
+        jTable1.getTableHeader().setReorderingAllowed(false);
+        jTable1.setUpdateSelectionOnSort(false);
+        jScrollPane2.setViewportView(jTable1);
+        if (jTable1.getColumnModel().getColumnCount() > 0) {
+            jTable1.getColumnModel().getColumn(0).setMinWidth(1);
+            jTable1.getColumnModel().getColumn(0).setPreferredWidth(1);
+            jTable1.getColumnModel().getColumn(0).setCellRenderer(this.aCustomCellRenderer);
+            jTable1.getColumnModel().getColumn(1).setCellRenderer(this.aCustomCellRenderer);
+        }
+
     int size = userPrefs.getInt("Fontsize", 16);
     setFontSize(size);
-    
-    jScrollPane2.setViewportView(jTable1);
-    if (jTable1.getColumnModel().getColumnCount() > 0) {
-      jTable1.getColumnModel().getColumn(0).setMinWidth(1);
-      jTable1.getColumnModel().getColumn(0).setPreferredWidth(80);
-      jTable1.getColumnModel().getColumn(0).setCellRenderer(this.aCustomCellRenderer);
-      jTable1.getColumnModel().getColumn(1).setCellRenderer(this.aCustomCellRenderer);
-    }
+
     
     jButtonRegisterZuruecksetzen.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
     jButtonRegisterZuruecksetzen.setText("Register auf 0 setzen");
@@ -1186,7 +1307,7 @@ public class RemaspView extends javax.swing.JFrame {
   public void setFontSize(int size) {
     jTable1.setFont(new Font("Consolas", Font.PLAIN, size));
     jTable1.setRowHeight(size+4);
-    ((JTextField)jTable1.getDefaultEditor(Long.class)).setFont(new Font("Consolas", Font.PLAIN, size));
+    ((RemaspCellEditor)jTable1.getDefaultEditor(Long.class)).setFont(new Font("Consolas", Font.PLAIN, size));
     
     //Schriftgröße des Editors ändern
     Font currentFont = jTextPane.getFont();
