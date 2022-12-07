@@ -94,7 +94,7 @@ public class RemaspMachineController {
     }
   }
   
-  class StarteProgrammACtionListener implements ActionListener {
+  class StarteProgrammActionListener implements ActionListener {
     
     @Override
     public void actionPerformed(ActionEvent ae) {
@@ -241,9 +241,7 @@ public class RemaspMachineController {
   }
   
   private void transferTableViewToTableModel() throws Exception {
-    
     //Die erste for-Schleife testet nur, ob alle Tabellenwerte echt größer Null sind
-    System.out.println("Anzahl: " + konfiguration.getRegisters().size());
     for (int i = 0; i < konfiguration.getRegisters().size(); i++) {
       long aktuellerZellenWert = (Long) remaspView.getjTable1().getModel().getValueAt(i, 1);
       if (aktuellerZellenWert < 0) {
@@ -258,11 +256,9 @@ public class RemaspMachineController {
   }
   
   private void aktualisiereTableView() {
-    for (int i = 0; i < konfiguration.getRegisters().size(); i++) {
-      
+    for (int i = 0; i < konfiguration.getRegisters().size(); i++) {      
       remaspView.getjTable1().getModel().setValueAt(konfiguration.getRegister(i), i, 1);
     }
-    
   }
   
   private void setzeAlleRegisterAufNull() {
@@ -465,7 +461,7 @@ public class RemaspMachineController {
   }
   
   private void addActionListeners() {
-    this.remaspView.getjButtonStarteProgramm().addActionListener(new StarteProgrammACtionListener());
+    this.remaspView.getjButtonStarteProgramm().addActionListener(new StarteProgrammActionListener());
     this.remaspView.getjButtonRegisterZuruecksetzen().addActionListener(new RegisterAufNullActionListener());
     this.remaspView.getjButtonSetzeNeueAnzahlRegister().addActionListener(new SetzeNeueAnzahlRegisterAL());
     this.remaspView.getjButtonProgrammAbbrechen().addActionListener(new ProgrammAbbrechenAL());
@@ -562,7 +558,7 @@ public class RemaspMachineController {
     public void actionPerformed(ActionEvent ae) {
       meldungAusgeben("ReMaSp: Ein Registermaschinen-Simulationsprogramm.\n"
       + "Copyright (C) 2017 Norman Sutatyo\n"
-      + "Version 3.5, 30.11.2022, Gerhard Röhner\n"
+      + "Version 3.6, 7.12.2022, Gerhard Röhner\n"
       + "Lizenz:  3-clause BSD license");
     }
   }

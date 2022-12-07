@@ -54,7 +54,8 @@ public class RemaspCellEditor extends JTextField implements TableCellEditor, Doc
 
   public Object getCellEditorValue() {
     // Gibt den aktuellen Wert des Editors zurück
-    return getText();
+    //return getText(); das war falsch
+    return Long.valueOf(getText());
   }
 
   public boolean isCellEditable( EventObject anEvent ) {

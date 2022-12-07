@@ -177,141 +177,141 @@ public class RemaspView extends javax.swing.JFrame {
     jScrollPane1.setViewportView(jTextPane);
     jTable1.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
     
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Akk",  new Long(0)},
-                {"1",  new Long(0)},
-                {"2",  new Long(0)},
-                {"3",  new Long(0)},
-                {"4",  new Long(0)},
-                {"5",  new Long(0)},
-                {"6",  new Long(0)},
-                {"7",  new Long(0)},
-                {"8",  new Long(0)},
-                {"9",  new Long(0)},
-                {"10",  new Long(0)},
-                {"11",  new Long(0)},
-                {"12",  new Long(0)},
-                {"13",  new Long(0)},
-                {"14",  new Long(0)},
-                {"15",  new Long(0)},
-                {"16",  new Long(0)},
-                {"17",  new Long(0)},
-                {"18",  new Long(0)},
-                {"19",  new Long(0)},
-                {"20",  new Long(0)},
-                {"21",  new Long(0)},
-                {"22",  new Long(0)},
-                {"23",  new Long(0)},
-                {"24",  new Long(0)},
-                {"25",  new Long(0)},
-                {"26",  new Long(0)},
-                {"27",  new Long(0)},
-                {"28",  new Long(0)},
-                {"29",  new Long(0)},
-                {"30",  new Long(0)},
-                {"31",  new Long(0)},
-                {"32",  new Long(0)},
-                {"33",  new Long(0)},
-                {"34",  new Long(0)},
-                {"35",  new Long(0)},
-                {"36",  new Long(0)},
-                {"37",  new Long(0)},
-                {"38",  new Long(0)},
-                {"39",  new Long(0)},
-                {"40",  new Long(0)},
-                {"41",  new Long(0)},
-                {"42",  new Long(0)},
-                {"43",  new Long(0)},
-                {"44",  new Long(0)},
-                {"45",  new Long(0)},
-                {"46",  new Long(0)},
-                {"47",  new Long(0)},
-                {"48",  new Long(0)},
-                {"49",  new Long(0)},
-                {"50",  new Long(0)},
-                {"51",  new Long(0)},
-                {"52",  new Long(0)},
-                {"53",  new Long(0)},
-                {"54",  new Long(0)},
-                {"55",  new Long(0)},
-                {"56",  new Long(0)},
-                {"57",  new Long(0)},
-                {"58",  new Long(0)},
-                {"59",  new Long(0)},
-                {"60",  new Long(0)},
-                {"61",  new Long(0)},
-                {"62",  new Long(0)},
-                {"63",  new Long(0)},
-                {"64",  new Long(0)},
-                {"65",  new Long(0)},
-                {"66",  new Long(0)},
-                {"67",  new Long(0)},
-                {"68",  new Long(0)},
-                {"69",  new Long(0)},
-                {"70",  new Long(0)},
-                {"71",  new Long(0)},
-                {"72",  new Long(0)},
-                {"73",  new Long(0)},
-                {"74",  new Long(0)},
-                {"75",  new Long(0)},
-                {"76",  new Long(0)},
-                {"77",  new Long(0)},
-                {"78",  new Long(0)},
-                {"79",  new Long(0)},
-                {"80",  new Long(0)},
-                {"81",  new Long(0)},
-                {"82",  new Long(0)},
-                {"83",  new Long(0)},
-                {"84",  new Long(0)},
-                {"85",  new Long(0)},
-                {"86",  new Long(0)},
-                {"87",  new Long(0)},
-                {"88",  new Long(0)},
-                {"89",  new Long(0)},
-                {"90",  new Long(0)},
-                {"91",  new Long(0)},
-                {"92",  new Long(0)},
-                {"93",  new Long(0)},
-                {"94",  new Long(0)},
-                {"95",  new Long(0)},
-                {"96",  new Long(0)},
-                {"97",  new Long(0)},
-                {"98",  new Long(0)},
-                {"99",  new Long(0)}
-            },
-            new String [] {
-                "Nr", "Inhalt"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Long.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, true
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jTable1.setDefaultEditor(Long.class, new RemaspCellEditor());
-        jTable1.setToolTipText("<html>\nIn der rechten Spalte kann die Regisgterbelegung vorgenommen werden.<br>\nEs können nur natürliche Zahlen reingeschrieben werden. <br>\nDie Eingabe muss zweimal mit der Enter-Taste bestätigt werden.");
-        jTable1.setGridColor(java.awt.Color.black);
-        jTable1.setRowHeight(20);
-        jTable1.getTableHeader().setReorderingAllowed(false);
-        jTable1.setUpdateSelectionOnSort(false);
-        jScrollPane2.setViewportView(jTable1);
-        if (jTable1.getColumnModel().getColumnCount() > 0) {
-            jTable1.getColumnModel().getColumn(0).setMinWidth(1);
-            jTable1.getColumnModel().getColumn(0).setPreferredWidth(1);
-            jTable1.getColumnModel().getColumn(0).setCellRenderer(this.aCustomCellRenderer);
-            jTable1.getColumnModel().getColumn(1).setCellRenderer(this.aCustomCellRenderer);
+    jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        new Object [][] {
+            {"Akk",  Long.valueOf("0")},
+            {"1",  Long.valueOf("0")},
+            {"2",  Long.valueOf("0")},
+            {"3",  Long.valueOf("0")},
+            {"4",  Long.valueOf("0")},
+            {"5",  Long.valueOf("0")},
+            {"6",  Long.valueOf("0")},
+            {"7",  Long.valueOf("0")},
+            {"8",  Long.valueOf("0")},
+            {"9",  Long.valueOf("0")},
+            {"10",  Long.valueOf("0")},
+            {"11",  Long.valueOf("0")},
+            {"12",  Long.valueOf("0")},
+            {"13",  Long.valueOf("0")},
+            {"14",  Long.valueOf("0")},
+            {"15",  Long.valueOf("0")},
+            {"16",  Long.valueOf("0")},
+            {"17",  Long.valueOf("0")},
+            {"18",  Long.valueOf("0")},
+            {"19",  Long.valueOf("0")},
+            {"20",  Long.valueOf("0")},
+            {"21",  Long.valueOf("0")},
+            {"22",  Long.valueOf("0")},
+            {"23",  Long.valueOf("0")},
+            {"24",  Long.valueOf("0")},
+            {"25",  Long.valueOf("0")},
+            {"26",  Long.valueOf("0")},
+            {"27",  Long.valueOf("0")},
+            {"28",  Long.valueOf("0")},
+            {"29",  Long.valueOf("0")},
+            {"30",  Long.valueOf("0")},
+            {"31",  Long.valueOf("0")},
+            {"32",  Long.valueOf("0")},
+            {"33",  Long.valueOf("0")},
+            {"34",  Long.valueOf("0")},
+            {"35",  Long.valueOf("0")},
+            {"36",  Long.valueOf("0")},
+            {"37",  Long.valueOf("0")},
+            {"38",  Long.valueOf("0")},
+            {"39",  Long.valueOf("0")},
+            {"40",  Long.valueOf("0")},
+            {"41",  Long.valueOf("0")},
+            {"42",  Long.valueOf("0")},
+            {"43",  Long.valueOf("0")},
+            {"44",  Long.valueOf("0")},
+            {"45",  Long.valueOf("0")},
+            {"46",  Long.valueOf("0")},
+            {"47",  Long.valueOf("0")},
+            {"48",  Long.valueOf("0")},
+            {"49",  Long.valueOf("0")},
+            {"50",  Long.valueOf("0")},
+            {"51",  Long.valueOf("0")},
+            {"52",  Long.valueOf("0")},
+            {"53",  Long.valueOf("0")},
+            {"54",  Long.valueOf("0")},
+            {"55",  Long.valueOf("0")},
+            {"56",  Long.valueOf("0")},
+            {"57",  Long.valueOf("0")},
+            {"58",  Long.valueOf("0")},
+            {"59",  Long.valueOf("0")},
+            {"60",  Long.valueOf("0")},
+            {"61",  Long.valueOf("0")},
+            {"62",  Long.valueOf("0")},
+            {"63",  Long.valueOf("0")},
+            {"64",  Long.valueOf("0")},
+            {"65",  Long.valueOf("0")},
+            {"66",  Long.valueOf("0")},
+            {"67",  Long.valueOf("0")},
+            {"68",  Long.valueOf("0")},
+            {"69",  Long.valueOf("0")},
+            {"70",  Long.valueOf("0")},
+            {"71",  Long.valueOf("0")},
+            {"72",  Long.valueOf("0")},
+            {"73",  Long.valueOf("0")},
+            {"74",  Long.valueOf("0")},
+            {"75",  Long.valueOf("0")},
+            {"76",  Long.valueOf("0")},
+            {"77",  Long.valueOf("0")},
+            {"78",  Long.valueOf("0")},
+            {"79",  Long.valueOf("0")},
+            {"80",  Long.valueOf("0")},
+            {"81",  Long.valueOf("0")},
+            {"82",  Long.valueOf("0")},
+            {"83",  Long.valueOf("0")},
+            {"84",  Long.valueOf("0")},
+            {"85",  Long.valueOf("0")},
+            {"86",  Long.valueOf("0")},
+            {"87",  Long.valueOf("0")},
+            {"88",  Long.valueOf("0")},
+            {"89",  Long.valueOf("0")},
+            {"90",  Long.valueOf("0")},
+            {"91",  Long.valueOf("0")},
+            {"92",  Long.valueOf("0")},
+            {"93",  Long.valueOf("0")},
+            {"94",  Long.valueOf("0")},
+            {"95",  Long.valueOf("0")},
+            {"96",  Long.valueOf("0")},
+            {"97",  Long.valueOf("0")},
+            {"98",  Long.valueOf("0")},
+            {"99",  Long.valueOf("0")}
+        },
+        new String [] {
+            "Nr", "Inhalt"
         }
+    ) {
+        Class[] types = new Class [] {
+            java.lang.String.class, java.lang.Long.class
+        };
+        boolean[] canEdit = new boolean [] {
+            false, true
+        };
+
+        public Class getColumnClass(int columnIndex) {
+            return types [columnIndex];
+        }
+
+        public boolean isCellEditable(int rowIndex, int columnIndex) {
+            return canEdit [columnIndex];
+        }
+    });
+    jTable1.setDefaultEditor(Long.class, new RemaspCellEditor());
+    jTable1.setToolTipText("<html>\nIn der rechten Spalte kann die Registerbelegung vorgenommen werden.<br>\nEs können nur natürliche Zahlen reingeschrieben werden. <br>\nDie Eingabe muss zweimal mit der Enter-Taste bestätigt werden.");
+    jTable1.setGridColor(java.awt.Color.black);
+    jTable1.setRowHeight(20);
+    jTable1.getTableHeader().setReorderingAllowed(false);
+    jTable1.setUpdateSelectionOnSort(false);
+    jScrollPane2.setViewportView(jTable1);
+    if (jTable1.getColumnModel().getColumnCount() > 0) {
+        jTable1.getColumnModel().getColumn(0).setMinWidth(1);
+        jTable1.getColumnModel().getColumn(0).setPreferredWidth(1);
+        jTable1.getColumnModel().getColumn(0).setCellRenderer(this.aCustomCellRenderer);
+        jTable1.getColumnModel().getColumn(1).setCellRenderer(this.aCustomCellRenderer);
+    }
 
     int size = userPrefs.getInt("Fontsize", 16);
     setFontSize(size);
@@ -810,177 +810,196 @@ public class RemaspView extends javax.swing.JFrame {
 
   private void jMenuItemWhileBspActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemWhileBspActionPerformed
     this.getjTextPane().setText(
-    "// WHILE Schleife : while (R1 > R2) {\n"
-    + "// inkrement R3;\n" 
-    + "// dekrement R1;\n"
-    + "//}\n"
-    + "// Eingabe: R1, R2\n"
-    + "// Ausgabe: R0 = Abstand zwischen R1 und R2 \n"
-    + "\n"
-    + "M1: LOAD  1\n"
-    + "    SUB   2\n"
-    + "    JZERO M2\n"
-    + "    LOAD  3\n"
-    + "    ADD   #1\n"
-    + "    STORE 3\n"
-    + "    LOAD  1\n"
-    + "    SUB   #1\n"
-    + "    STORE 1\n"
-    + "    GOTO  M1\n"
-    + "M2: LOAD  3\n"
-    + "    END");
+      "// WHILE Schleife : while (R1 > R2) {       \n" +
+      "//   inkrement R3;                          \n" +
+      "//   dekrement R1;                          \n" +
+      "// }                                        \n" +
+      "// Eingabe: R1, R2                          \n" +
+      "// Ausgabe: R0 = Abstand zwischen R1 und R2 \n" +
+      "             \n" +
+      "M1: LOAD  1  \n" +
+      "    SUB   2  \n" +
+      "    JZERO M2 \n" +
+      "    LOAD  3  \n" +
+      "    ADD   #1 \n" +
+      "    STORE 3  \n" +
+      "    LOAD  1  \n" +
+      "    SUB   #1 \n" +
+      "    STORE 1  \n" +
+      "    GOTO  M1 \n" +
+      "M2: LOAD  3  \n" +
+      "    END");
   }//GEN-LAST:event_jMenuItemWhileBspActionPerformed
 
   private void jMenuItemIfThenElseBspActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemIfThenElseBspActionPerformed
-    this.getjTextPane().setText("// IF Then Else\n"
-    + "// genauer: IF R1<=1 THEN R2++ ELSE R2--\n"
-    + "\n"
-    + "   LOAD  1\n"
-    + "   SUB #1\n"
-    + "   JZERO If-Zweig\n"
-    + "\n"
-    + "   //Else-Zweig\n"
-    + "   LOAD  2\n"
-    + "   SUB #1\n"
-    + "   STORE 2\n"
-    + "   GOTO  Ende\n"
-    + "\n"
-    + "\n"
-    + "If-Zweig:  LOAD  2\n"
-    + "   ADD #1\n"
-    + "   STORE 2\n"
-    + "\n"
-    + "Ende:    END\n"
-    + " ");
-  }//GEN-LAST:event_jMenuItemIfThenElseBspActionPerformed
+    this.getjTextPane().setText(
+      "// If R1 <= 1    \n" +  
+      "//   then R2++   \n" +
+      "//   else R2--   \n" + 
+      "\n" +
+      "      LOAD  1    \n" +
+      "      SUB   #1   \n" +
+      "      JZERO then \n" +
+      "else: LOAD  2    \n" +
+      "      SUB   #1   \n" +
+      "      STORE 2    \n" +
+      "      GOTO  Ende \n" +
+      "then: LOAD  2    \n" +
+      "      ADD   #1   \n" +
+      "      STORE 2    \n" +
+      "Ende: END        \n");    
+  }
 
   private void jMenuItemAddRekBspActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemAddRekBspActionPerformed
-    this.getjTextPane().setText("// Berechnung von m+n rekursiv mittels eines Stacks\n"
-    + "// add(m,n) = n, falls m = 0\n"
-    + "// add(m,n) = add(m-1,n)+1, sonst\n"
-    + "// Eingabe: R4 = m, R5 = n\n"
-    + "// Ausgabe: R0 = m+n\n"
-    + " //Initialisiere Top und Anzahl\n"
-    + "   LOAD  #6\n"
-    + "   STORE 1\n"
-    + "   LOAD  #0\n"
-    + "   STORE 2\n"
+    this.getjTextPane().setText(
+      "// iterative Berechnung der rekursiv definierten Funktion add(mn,n) \n"
+    + "// mit Hilfe eines Stacks. \n"
+    + "// add(m,n) =  \n"
+    + "//   n,              falls m = 0  \n"
+    + "//   add(m-1,n) + 1, sonst  \n"
+    + "// \n"
+    + "// Registerbelegung  \n"
+    + "// Eingabe       \n"
+    + "//   R4 = m      \n"
+    + "//   R5 = n      \n"
+    + "// Verarbeitung  \n"
+    + "//   R1 = Top    \n"
+    + "//   R2 = Anzahl \n"
+    + "//   R3 = aktuelles m bzw. Teilsumme \n"
+    + "//   R6, R7, R8, ... Stack  \n"
+    + "// Ausgabe       \n"
+    + "//   R0 = m + n  \n"
     + "\n"
-    + " //*****Stapel Aufbau******\n"
-    + " //push(m)\n"
-    + "   LOAD  1\n"
-    + "   ADD   #1\n"
-    + "   STORE 1\n"
-    + "   LOAD  4\n"
-    + "   STORE *1\n"
-    + "   LOAD  2\n"
-    + "   ADD #1\n"
-    + "   STORE 2\n"
-    + " //****Stapel Aufbau: Schleifenanfang***\n"
-    + " //peek()\n"
-    + "SchlfAnf:            LOAD  *1\n"
-    + "   STORE 3   //R3=\"aktuelles\" m\n"
-    + "   JZERO StplAbbau //Springe zu Stapel Abbau\n"
-    + " // push(m-1)\n"
-    + "   LOAD  1\n"
-    + "   ADD #1\n"
-    + "   STORE 1\n"
-    + "   LOAD  3\n"
-    + "   SUB #1\n"
-    + "   STORE *1\n"
-    + "   LOAD  2\n"
-    + "   ADD #1\n"
-    + "   STORE 2\n"
-    + " //Gehe zu \"Stapel Aufbau: Schleifenanfang\"\n"
-    + "   GOTO  SchlfAnf\n"
+    + "      LOAD  #6   \n"
+    + "      STORE 1    // Top = 6     \n"
+    + "      LOAD  #0   \n"
+    + "      STORE 2    // Anzahl = 0  \n"
     + "\n"
-    + " //****Stapel Abbau*****\n"
-    + " //speicher n in *top\n"
-    + "StplAbbau: LOAD  5\n"
-    + "   STORE *1\n"
-    + " //*****Stapel Abbau: Schleifenanfang*****\n"
-    + " //Addiere 1 zum zureuckgegebenen Ergebnis\n"
-    + "Schlf2Anf: LOAD  *1\n"
-    + "   ADD #1\n"
-    + "   STORE 3\n"
-    + " //Dekrementiere top und anzahl\n"
-    + "   LOAD  1\n"
-    + "   SUB #1\n"
-    + "   STORE 1\n"
-    + "   LOAD  2\n"
-    + "   SUB #1\n"
-    + "   STORE 2\n"
-    + " //Wenn der Stapel leer ist, springe zum Ende\n"
-    + "   JZERO Ende\n"
-    + " //Speicher Rückgabewert int *top\n"
-    + "   LOAD  3\n"
-    + "   STORE *1\n"
-    + "   GOTO  Schlf2Anf\n"
-    + "Ende:    LOAD  7\n"
-    + "   END");
-  }//GEN-LAST:event_jMenuItemAddRekBspActionPerformed
+    + "// push(m)  \n"
+    + "      LOAD  4  \n"
+    + "      STORE *1 \n"
+    + "      LOAD  2  \n"
+    + "      ADD   #1 \n"
+    + "      STORE 2  \n"
+    
+    + "// Stapelaufbau \n"
+    + "M1:   LOAD  *1\n"
+    + "      STORE 3    // R3 = aktuelles m  \n"
+    + "      JZERO M2 \n"
+    + "// push(m-1)\n"
+    + "      LOAD  1  \n"
+    + "      ADD   #1 \n"
+    + "      STORE 1  \n"
+    + "      LOAD  3  \n"
+    + "      SUB   #1 \n"
+    + "      STORE *1 \n"
+    + "      LOAD  2  \n"
+    + "      ADD   #1 \n"
+    + "      STORE 2  \n"
+    + "      GOTO  M1 \n"
+    + "\n"
+    + "// Stapelabbau          \n"
+    + "// speichere n in *Top  \n"
+    + "M2:   LOAD  5   \n"
+    + "      STORE *1  \n"
+    + "// addiere 1 zum zurückgegebenen Ergebnis  \n"
+    + "M3:   LOAD  *1  \n"
+    + "      ADD   #1  \n"
+    + "      STORE 3   \n"
+    + "// dekrementiere Top und Anzahl  \n"
+    + "      LOAD  1   \n"
+    + "      SUB   #1  \n"
+    + "      STORE 1   \n"
+    + "      LOAD  2   \n"
+    + "      SUB   #1  \n"
+    + "      STORE 2   \n"
+    + "      JZERO Ende  \n"
+    + "// speichere Rückgabewert in *Top \n"
+    + "      LOAD  3   \n"
+    + "      STORE *1  \n"
+    + "      GOTO M3  \n"
+    + "Ende: LOAD  7  \n"
+    + "      END");
+  }
 
   private void jMenuItemSummeBspActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemSummeBspActionPerformed
-    this.getjTextPane().setText("// Summe zweier Zahlen\n"
-    + "// Eingabe: R1 = a, R2 = b, \n"
-    + "// Ausgabe: R0 = a+b\n"
-    + "\n"
-    + " LOAD  1\n"
-    + " ADD 2\n"
-    + " END");
+    this.getjTextPane().setText(
+      "// Summe zweier Zahlen \n" +
+      "// Eingabe: R1 = a     \n" +
+      "//          R2 = b     \n" +
+      "// Ausgabe: R0 = a+b   \n" +
+      "\n" +
+      "  LOAD 1  \n" +
+      "  ADD  2  \n"+
+      "  END");
   }//GEN-LAST:event_jMenuItemSummeBspActionPerformed
 
   private void jMenuItemListenEndeBspActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemListenEndeBspActionPerformed
-    this.getjTextPane().setText("// Das Listenende (letzte Element einer Liste) wird gesucht\n"
-    + "// genauer:   In Register 2i müssen Sie die zu speichernde Zahl schreiben, und in R 2i+1 den Zeiger auf das folgende Listenelement. i>=2\n"
-    + "//   Durch R2i+1=0 wird das Ende der Liste signalisiert.\n"
-    + "//   In R1 muss der Zeiger auf das erste Listenelement reingeschrieben werden.\n"
-    + "//     Die folgenden Instruktionen Speichern den Wert des letzten Listenelemntes in R0\n"
-    + "//   R2 und R3 müssen für Nebenrechnungen frei bleiben.\n"
-    + "\n"
-    + " \n"
-    + "   //Der Listenkopf wird in R3 geladen\n"
-    + "   LOAD  1\n"
-    + "   STORE 3\n"
-    + "\n"
-    + "   //while R3 ungleich 0 do ... od\n"
-    + "While-Kopf:  LOAD  3\n"
-    + "   JZERO After-While //nach While Schleife\n"
-    + " \n"
-    + "   //R2= Wert des aktuellen Listengliedes\n"
-    + "   LOAD  *3\n"
-    + "   STORE 2\n"
-    + "\n"
-    + "   //R3= Position des nächsten Listengliedes\n"
-    + "   LOAD  3\n"
-    + "   ADD #1\n"
-    + "   STORE 3\n"
-    + "   LOAD  *3\n"
-    + "   STORE 3\n"
-    + "\n"
-    + "   GOTO  While-Kopf\n"
-    + "\n"
-    + "   //Nach der While Schleife \n"
-    + "After-While: LOAD  2\n"
-    + "   END\n"
-    + " ");
-  }//GEN-LAST:event_jMenuItemListenEndeBspActionPerformed
+    this.getjTextPane().setText(
+      "// Das letzte Element einer verketteten Liste wird gesucht. \n" +
+      "// Die Liste wird wie folgt gespeichert: \n" +
+      "//   In den geraden Registern R2i stehen die Zahlen der Liste \n" +
+      "//   und in ungeraden Registern R2i+1 die Position des jeweils folgenden Listenelements. \n" +
+      "//   Durch R2i+1 = 0 wird das Ende der Liste signalisiert. \n" + 
+      "//   R1 enthält die Position des ersten Listenelements.  \n" + 
+      "//   R2 und R3 werden für die Berechnung benötigt.  \n" +
+      "// \n" +
+      "// Registerbelegung: \n" +
+      "// Eingabe  \n" +
+      "//   R1 = Position des ersten Listenelements, z. B. R1 = 4  \n" +
+      "//   R2 = aktuelles Listenelement  \n" +
+      "//   R3 = Position des aktuellen Listenelements \n" +
+      "//   R4 = erstes Listenelement \n" +
+      "//   R5 = Position des nächsten Listenelements \n" +
+      "//   ...  \n" +
+      "// Ausgabe  \n" +
+      "//   R2 = letztes Listenelement   \n" +
+      "// Beispiel   \n" +
+      "//   R1 = 4   \n" + 
+      "//   R4 = 71  erstes Listenelement \n" +
+      "//   R5 = 8   \n" +
+      "//   R8 = 33  zweites Listenelement  \n" +
+      "//   R9 = 0     und letztes Listenelement  \n" +
+      "\n" + 
+      "\n" +
+      "        LOAD  1    \n" +
+      "        STORE 3    \n" +
+      "\n" +
+      "While:  JZERO Ende \n" + 
+      " \n" + 
+      "        LOAD  *3   \n" +
+      "        STORE 2    \n" +
+      "\n" +
+      "        LOAD  3    \n" +
+      "        ADD  #1    \n" +
+      "        STORE 3    \n" +
+      "        LOAD  *3   \n" +
+      "        STORE 3    \n" +
+      "        GOTO While \n" +
+      "\n" +
+      "Ende:   LOAD  2    \n" +
+      "        END        \n" +
+      " ");
+  }
 
   private void jMenuItemMaximumBspActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemMaximumBspActionPerformed
-    this.getjTextPane().setText("// Berechnung des Maximums \n"
-    + "// Eingabe: R1 und R2\n"
-    + "// Ausgabe: R0 = max(R1, R2)\n"
-    + "\n"
-    + "   LOAD 1\n"
-    + "   SUB 2\n"
-    + "   JZERO R2-größer\n"
-    + "   // Fall R1 > R2\n"
-    + "   LOAD 1\n"
-    + "   GOTO Ende\n"
-    + "   // Fall R2 >= R1\n"
-    + "R2-größer: LOAD 2\n"
-    + "Ende:    END");
-  }//GEN-LAST:event_jMenuItemMaximumBspActionPerformed
+    this.getjTextPane().setText(
+      "// Berechnung des Maximums von n und m \n" +
+      "// Registerbelegung \n" +
+      "// Eingabe:         \n" + 
+      "//   R1 = n         \n" +
+      "//   R2 = m         \n" +
+      "// Ausgabe:         \n" +
+      "//   R0 = max(n, m) \n" +
+      "                    \n" + 
+      "      LOAD  1       \n" +
+      "      SUB   2       \n" +
+      "      JZERO m>=n    \n" +
+      "      LOAD  1       \n" + 
+      "      GOTO  Ende    \n" +
+      "m>=n: LOAD  2       \n" +
+      "Ende: END           \n");
+  }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
   private javax.swing.JButton buttonDrucken;
