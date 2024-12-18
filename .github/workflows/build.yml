@@ -37,7 +37,7 @@ jobs:
 
       - name: Change base href for GitHub Pages
         run: |
-          sed -i 's|<base href="/">|<base href="/flutter_web_os/">|' build/web/index.html
+          sed -i 's|<base href="/">|<base href="/flutter_remasp/">|' build/web/index.html
 
       - name: upload page artifact
         uses: actions/upload-pages-artifact@v3
