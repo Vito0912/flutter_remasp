@@ -1,0 +1,31 @@
+name: flutter_remasp
+description: "A Registermaschinensimulationsprogramm built in Flutter based on groehner/Remasp"
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.6.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+  fluent_ui: ^4.10.0
+  system_theme: ^3.1.2
+  flutter_hooks: ^0.20.5
+  hooks_riverpod: ^2.6.1
+  flutter_riverpod: ^2.6.1
+  file_picker: ^8.1.6
+  file_saver: ^0.2.14
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^5.0.0
+
+flutter:
+
+  uses-material-design: true
