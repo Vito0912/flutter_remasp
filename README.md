@@ -1,9 +1,8 @@
 # Flutter ReMaSp
 
 https://vito0912.github.io/flutter_remasp
-
-ReMaSp (Registermaschienensimulationsprogramm) in Flutter geschrieben. Verfügbar für Windows, Android und Web.\
-Deutsche Version unten.
+---
+ReMaSp (Registermaschienensimulationsprogramm) in Flutter geschrieben. Verfügbar für Web und Windows.\
 ---
 ReMaSp (Register Machine Simulation Program) is written in Flutter and is available for Windows, Android, and the Web.
 
