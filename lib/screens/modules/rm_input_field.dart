@@ -24,8 +24,8 @@ class RmInputField extends StatelessWidget {
             return AnimatedBuilder(
               animation: textScrollController,
               builder: (BuildContext context, Widget? child) {
-                double offset = 6;
-                offset += (19 * currentInstruction.lineIndex);
+                double offset = 7;
+                offset += (20 * currentInstruction.lineIndex);
                 offset -= textScrollController.position.pixels;
 
                 if (offset >= 0) {
@@ -88,6 +88,10 @@ class RmInputField extends StatelessWidget {
                 maxLines: null,
                 autofocus: true,
                 autocorrect: false,
+                strutStyle: StrutStyle(
+                  fontSize: 14,
+                  height: (20 / 14),
+                ),
                 textAlignVertical: TextAlignVertical.top,
                 controller: textController,
                 scrollController: textScrollController,
