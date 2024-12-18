@@ -41,11 +41,11 @@ class RmSettings extends HookConsumerWidget {
                               children: [
                                 Text('An easy register machine in Flutter.'),
                                 Text(
-                                    'This program follows the instructions for the Hessian high school graduation exam.'),
+                                    'This program follows the instructions for the "hessisches Landesabitur".'),
                                 Text(
                                     'The program was inspired by the project "remasp" by Norman Sutatyo and can be accessed at https://github.com/groehner/Remasp.'),
                                 Text(
-                                    'License viewable at https://github.com/Vito0912/flutter_remasp/tree/main/old/LICENSE.md'),
+                                    'License viewable at https://github.com/Vito0912/flutter_remasp/tree/main/java/LICENSE'),
                               ])),
                 ],
               ),
