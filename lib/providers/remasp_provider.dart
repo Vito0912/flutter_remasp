@@ -56,7 +56,12 @@ class ReMaSpNotifier extends ChangeNotifier {
 
   void executeInstruction() {
     if (instructions.containsKey(currentLabel)) {
-      instructions[currentLabel]![currentInstructionIndex].execute();
+      try {
+        instructions[currentLabel]![currentInstructionIndex].execute();
+      } catch (e) {
+        stopExecution();
+        rethrow;
+      }
       if (remasp != null) nextInstruction();
     } else {
       stopExecution();
