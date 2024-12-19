@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/foundation.dart';
+import 'package:flutter_remasp/generated/l10n.dart';
 import 'package:flutter_remasp/globals.dart';
 import 'package:flutter_remasp/utils/instructions.dart';
 import 'package:flutter_remasp/utils/remasp.dart';
@@ -47,7 +48,7 @@ class ReMaSpNotifier extends ChangeNotifier {
   void setLabel(String label) {
     if (!instructions.containsKey(label)) {
       print("Available labels: ${instructions.keys}");
-      throw Exception("Label $label does not exist");
+      throw Exception(S.current.errorMissingLabel(label));
     }
     currentLabel = label;
     currentInstructionIndex = -1;
@@ -65,7 +66,7 @@ class ReMaSpNotifier extends ChangeNotifier {
       if (remasp != null) nextInstruction();
     } else {
       stopExecution();
-      throw Exception("Label $currentLabel does not exist");
+      throw Exception(S.current.errorMissingLabel(currentLabel));
     }
   }
 
@@ -101,12 +102,12 @@ class ReMaSpNotifier extends ChangeNotifier {
           notifyListeners();
         } else {
           stopExecution();
-          throw Exception("No more instructions and no END instruction found");
+          throw Exception(S.current.errorNoInstructionsRunning);
         }
       }
     } else {
       stopExecution();
-      throw Exception("Label $currentLabel does not exist");
+      throw Exception(S.current.errorMissingLabel(currentLabel));
     }
   }
 }

@@ -1,6 +1,7 @@
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:flutter/material.dart' show showAboutDialog;
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:flutter_remasp/generated/l10n.dart';
 import 'package:flutter_remasp/globals.dart';
 import 'package:flutter_remasp/providers/register_provider.dart';
 import 'package:flutter_remasp/providers/remasp_provider.dart';
@@ -30,7 +31,7 @@ class RmSettings extends HookConsumerWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 spacing: 8.0,
                 children: [
-                  Text('Maschienensteuerung'),
+                  Text(S.of(context).labelMachineControl),
                   // Show Flutter attribution
                   IconButton(
                       icon: Icon(FluentIcons.info),
@@ -50,30 +51,30 @@ class RmSettings extends HookConsumerWidget {
                 ],
               ),
               Button(
-                  child: reMaSp.isActive()
-                      ? Text("Stoppe Programm")
-                      : Text('Starte Programm'),
                   onPressed: reMaSp.isActive()
                       ? () {
                           reMaSp.stopExecution();
                         }
                       : () async {
                           if (textController.text.isEmpty) {
-                            throw Exception('No instructions found');
+                            throw Exception(S.of(context).errorNoInstructions);
                           }
                           reMaSp.reset();
                           reMaSp.startExecution();
-                        }),
+                        },
+                  child: reMaSp.isActive()
+                      ? Text(S.of(context).labelStopProgram)
+                      : Text(S.of(context).labelStartProgram)),
               Button(
                   onPressed: reMaSp.isActive()
                       ? null
                       : () {
                           if (textController.text.isEmpty) {
-                            throw Exception('No instructions found');
+                            throw Exception(S.of(context).errorNoInstructions);
                           }
                           reMaSp.reset();
                         },
-                  child: Text('Starte Einzelschrittmodus')),
+                  child: Text(S.of(context).labelStartSingleStep)),
               Button(
                   onPressed: !reMaSp.isActive()
                       ? null
@@ -81,29 +82,30 @@ class RmSettings extends HookConsumerWidget {
                           reMaSp.executeInstruction();
                         },
                   child: Row(
+                    spacing: 2.0,
                     children: [
-                      Text('Weiter'),
+                      Text(S.of(context).labelNext),
                       Icon(FluentIcons.chevron_right_end6),
                     ],
                   )),
               Divider(),
-              Text('Registereinstellungen'),
+              Text(S.of(context).labelRegisterSettings),
               Button(
-                  child: Text('Register zwischenspeichern'),
+                  child: Text(S.of(context).labelSaveRegisters),
                   onPressed: () => {
                         previousState.value = ref.read(registerProvider).values
                       }),
               Button(
-                  child: Text('Register laden'),
                   onPressed: previousState.value.isEmpty
                       ? null
                       : () => {
                             ref
                                 .read(registerProvider.notifier)
                                 .setValues(previousState.value)
-                          }),
+                          },
+                  child: Text(S.of(context).labelLoadRegisters)),
               Button(
-                  child: Text('Register leeren'),
+                  child: Text(S.of(context).labelResetRegisters),
                   onPressed: () {
                     ref.read(registerProvider.notifier).clearValues();
                     reMaSp.stopExecution();
@@ -114,8 +116,8 @@ class RmSettings extends HookConsumerWidget {
                 return Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                        'Zeit pro Befehl: ${speedHook.value.inMilliseconds}ms'),
+                    Text(S.of(context).labelTimePerInstruction(
+                        speedHook.value.inMilliseconds)),
                     Slider(
                         min: 0,
                         max: 2000,

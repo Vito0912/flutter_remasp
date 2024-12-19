@@ -1,0 +1,28 @@
+{
+  "labelTitle": "Register Machine",
+  "labelStartProgram": "Start Program",
+  "labelStartSingleStep": "Start Single-Step Mode",
+  "labelNext": "Next",
+  "labelStopProgram": "Stop Program",
+  "labelResetRegisters": "Clear Registers",
+  "labelLoadRegisters": "Load Registers",
+  "labelSaveRegisters": "Save Registers",
+  "labelTimePerInstruction": "Time per Instruction: {time}ms",
+  "labelMachineControl": "Machine Control",
+  "labelRegisterSettings": "Register Settings",
+
+  "errorAnErrorOccurred": "An error occurred.",
+  "close": "Close",
+
+  "errorNoInstructions": "No instructions available. You must add at least one instruction!",
+  "errorRegisterOverflow": "Register overflow - You should never reach this value :)",
+  "errorMissingLabel": "The label {label} was not found. Please check your instructions.",
+  "errorNoInstructionsRunning": "There are no instructions to execute, and the END command was not found.",
+  "errorNotAllowedToWriteTo0": "You are not allowed to STORE in register 0.",
+  "errorDivisionByZero": "Division by 0 is not allowed.",
+  "errorNumberLoadingNotAllowed": "You are not allowed to use a constant as an operand for STORE.",
+  "errorNotParseable": "The instruction could not be parsed. Please check your instructions. Faulty instruction chain: {instruction}",
+  "errorLabelAlreadyExists": "The label {label} already exists.",
+  "errorBehindLabelInstruction": "An instruction must follow a label.",
+  "errorInvalidInstruction": "Invalid instruction in line {line}: {instruction}"
+}

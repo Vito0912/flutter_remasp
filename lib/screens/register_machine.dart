@@ -5,6 +5,7 @@ import 'package:file_saver/file_saver.dart';
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_remasp/globals.dart';
+import 'package:flutter_remasp/providers/locale_provider.dart';
 import 'package:flutter_remasp/providers/remasp_provider.dart';
 import 'package:flutter_remasp/screens/modules/registers.dart';
 import 'package:flutter_remasp/screens/modules/rm_input_field.dart';
@@ -86,7 +87,17 @@ class RegisterMachine extends StatelessWidget {
 
                                     textController.text = contentText ?? '';
                                   }
-                                })
+                                }),
+                      Spacer(),
+                      IconButton(
+                        icon: Icon(
+                          FluentIcons.locale_language,
+                          size: 20,
+                        ),
+                        onPressed: () {
+                          ref.read(localeProvider.notifier).toggle();
+                        },
+                      )
                     ],
                   );
                 }),

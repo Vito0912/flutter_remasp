@@ -1,0 +1,28 @@
+{
+  "labelTitle": "Registermaschine",
+  "labelStartProgram": "Starte Programm",
+  "labelStartSingleStep": "Starte Einzelschrittmodus",
+  "labelNext": "Weiter",
+  "labelStopProgram": "Stoppe Programm",
+  "labelResetRegisters": "Register leeren",
+  "labelLoadRegisters": "Register laden",
+  "labelSaveRegisters": "Register zwischenspeichern",
+  "labelTimePerInstruction": "Zeit pro Befehl: {time}ms",
+  "labelMachineControl": "Maschinensteuerung",
+  "labelRegisterSettings": "Registereinstellungen",
+
+  "errorAnErrorOccurred": "Ein Fehler ist aufgetreten.",
+  "close": "Schließen",
+
+  "errorNoInstructions": "Keine Befehle vorhanden. Du musst mindestens einen Befehl hinzufügen!",
+  "errorRegisterOverflow": "Registerüberlauf - Du solltest diesen Wert nie erreichen :)",
+  "errorMissingLabel": "Das Label {label} wurde nicht gefunden. Bitte überprüfe deine Befehle.",
+  "errorNoInstructionsRunning": "Es sind keine Befehle zum Ausführen vorhanden und der END Befehl wurde nicht gefunden.",
+  "errorNotAllowedToWriteTo0": "Du darfst nicht in Register 0 STOREn.",
+  "errorDivisionByZero": "Division durch 0 ist nicht erlaubt.",
+  "errorNumberLoadingNotAllowed": "Du darfst keine Konstante als Operand für STORE benutzen.",
+  "errorNotParseable": "Der Befehl konnte nicht geparst werden. Bitte überprüfe deine Befehle. Fehlerhafte Befehlskette: {instruction}",
+  "errorLabelAlreadyExists": "Das Label {label} ist doppelt vorhanden.",
+  "errorBehindLabelInstruction": "Ein Befehl muss hinter einem Label stehen.",
+  "errorInvalidInstruction": "Ungültiger Befehl in Zeile {line}: {instruction}"
+}

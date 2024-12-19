@@ -1,4 +1,5 @@
 import 'package:flutter/foundation.dart';
+import 'package:flutter_remasp/generated/l10n.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class RegisterNotifier extends ChangeNotifier {
@@ -33,8 +34,7 @@ class RegisterNotifier extends ChangeNotifier {
     if (getValue(key).isValidInt) {
       return _registers[getValue(key).toInt()] ?? BigInt.zero;
     }
-    throw Exception(
-        'Stop Stop Stop. Du darfst hier schon mit BigInts rechnen ;). Aber "unendlich" Register gibt es hier nicht :).');
+    throw Exception(S.current.errorRegisterOverflow);
   }
 
   BigInt getValue(int key) {

@@ -3,6 +3,8 @@ import 'dart:async';
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart' as material;
+import 'package:flutter_remasp/generated/l10n.dart';
+import 'package:flutter_remasp/providers/locale_provider.dart';
 import 'package:flutter_remasp/screens/register_machine.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -39,13 +41,13 @@ Future<void> _showErrorToUser(String message) async {
     await showDialog<String>(
       context: context,
       builder: (context) => ContentDialog(
-        title: const Text('Ein Fehler ist aufgetreten'),
+        title: Text(S.current.errorAnErrorOccurred),
         content: Text(
           message,
         ),
         actions: [
           FilledButton(
-            child: const Text('Schließen'),
+            child: Text(S.current.close),
             onPressed: () => Navigator.pop(context),
           ),
         ],
@@ -81,22 +83,29 @@ class _MyAppState extends State<MyApp> {
         primarySwatch: material.Colors.blue,
         brightness: material.Brightness.dark,
       ),
+      localizationsDelegates: const [S.delegate],
+      debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.dark,
-      home: FluentApp(
-        navigatorKey: navigatorKey,
-        title: 'Registermaschinensimulationsprogramm',
-        theme: FluentThemeData(
-          accentColor: Colors.blue,
-          scaffoldBackgroundColor: Colors.black,
-          brightness: Brightness.dark,
-        ),
-        darkTheme: FluentThemeData(
-          accentColor: Colors.blue,
-          brightness: Brightness.dark,
-        ),
-        themeMode: ThemeMode.dark,
-        home: RegisterMachine(),
-      ),
+      home: Consumer(builder: (context, ref, child) {
+        return FluentApp(
+          navigatorKey: navigatorKey,
+          localizationsDelegates: const [S.delegate],
+          locale: Locale(ref.watch(localeProvider)),
+          debugShowCheckedModeBanner: false,
+          title: S.of(context).labelTitle,
+          theme: FluentThemeData(
+            accentColor: Colors.blue,
+            scaffoldBackgroundColor: Colors.black,
+            brightness: Brightness.dark,
+          ),
+          darkTheme: FluentThemeData(
+            accentColor: Colors.blue,
+            brightness: Brightness.dark,
+          ),
+          themeMode: ThemeMode.dark,
+          home: RegisterMachine(),
+        );
+      }),
     );
   }
 }

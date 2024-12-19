@@ -1,3 +1,4 @@
+import 'package:flutter_remasp/generated/l10n.dart';
 import 'package:flutter_remasp/providers/register_provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -13,7 +14,7 @@ abstract class Instructions {
     String value = instructionParts[1];
     if (value.startsWith("#")) {
       if (!allowNumber) {
-        throw Exception("# is not allowed here");
+        throw Exception(S.current.errorNumberLoadingNotAllowed);
       }
       return BigInt.parse(value.substring(1));
     } else if (value.startsWith("*")) {
@@ -27,7 +28,7 @@ abstract class Instructions {
           ? BigInt.parse(value)
           : ref.read(registerProvider).getValue(int.parse(value));
     }
-    throw Exception("Number could not be parsed - $instructionParts");
+    throw Exception(S.current.errorNotParseable(value));
   }
 
   BigInt getAkk() {

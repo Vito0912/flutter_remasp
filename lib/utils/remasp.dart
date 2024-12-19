@@ -1,3 +1,4 @@
+import 'package:flutter_remasp/generated/l10n.dart';
 import 'package:flutter_remasp/utils/instrcutions/add_instruction.dart';
 import 'package:flutter_remasp/utils/instrcutions/div_instruction.dart';
 import 'package:flutter_remasp/utils/instrcutions/end_instruction.dart';
@@ -37,7 +38,7 @@ class ReMaSp {
         // Check if currentLabel is already in the map
         if (instructions.containsKey(currentLabel)) {
           //
-          throw Exception("Label $currentLabel already exists");
+          throw Exception(S.current.errorLabelAlreadyExists(currentLabel));
         }
 
         // Add the instruction to the map
@@ -46,7 +47,7 @@ class ReMaSp {
         line = lines[i].split(":")[1].trim();
 
         if (line.isEmpty) {
-          throw Exception("Behind the label there must be an instruction");
+          throw Exception(S.current.errorBehindLabelInstruction);
         }
       }
       instructions[currentLabel]!.add(parseInstruction(i, line));
@@ -66,7 +67,8 @@ class ReMaSp {
         (parts[0].toLowerCase() != "end" &&
             (parts.length > 2 &&
                 !parts[2].trim().toLowerCase().contains("//")))) {
-      throw Exception("Invalid instruction ($parts) - $line");
+      throw Exception(
+          S.current.errorInvalidInstruction(line, parts.toString()));
     }
     if (parts.length > 2) {
       // Remove everything after second part (comments)
@@ -103,6 +105,8 @@ class ReMaSp {
         return JNZeroInstruction(
             lineIndex, getInstructionName(line, lowerCase: false), ref);
     }
-    throw Exception("Invalid instruction - ${getInstructionName(line)}");
+
+    throw Exception(S.current
+        .errorInvalidInstruction(lineIndex, instructionParts.toString()));
   }
 }
