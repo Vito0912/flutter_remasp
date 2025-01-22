@@ -10,6 +10,7 @@ class RmInputField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double? currentWidth;
     return Stack(
       children: [
         Consumer(builder: (BuildContext context, WidgetRef ref, child) {
@@ -25,13 +26,35 @@ class RmInputField extends StatelessWidget {
               animation: textScrollController,
               builder: (BuildContext context, Widget? child) {
                 double offset = 7;
-                offset += (20 * currentInstruction.lineIndex);
+                final double widthPerChar = 8.5;
+                final int lineHeight = 20;
+
+                if (currentWidth == null) {
+                  return SizedBox();
+                }
+
+                for (int i = 0; i < currentInstruction.lineIndex; i++) {
+                  final String line = textController.text.split('\n')[i];
+
+                  int currentHeight =
+                      ((line.length * widthPerChar) / currentWidth!).ceil() *
+                          lineHeight;
+                  offset += currentHeight;
+                }
+
+                final String line = textController.text
+                    .split('\n')[currentInstruction.lineIndex];
+
                 offset -= textScrollController.position.pixels;
 
                 if (offset >= 0) {
                   return Container(
                     margin: EdgeInsets.only(top: offset),
-                    height: 16,
+                    height:
+                        (((line.length * widthPerChar) / currentWidth!).ceil() *
+                                    lineHeight)
+                                .toDouble() -
+                            4,
                     color: Colors.yellow.withValues(alpha: 0.4),
                   );
                 }
@@ -83,24 +106,33 @@ class RmInputField extends StatelessWidget {
 
                 return KeyEventResult.ignored; // Let other events through.
               },
-              child: TextBox(
-                readOnly: isActive,
-                maxLines: null,
-                autofocus: true,
-                autocorrect: false,
-                strutStyle: StrutStyle(
-                  fontSize: 14,
-                  height: (20 / 14),
-                ),
-                textAlignVertical: TextAlignVertical.top,
-                controller: textController,
-                scrollController: textScrollController,
-                textInputAction: TextInputAction.newline,
-                keyboardType: TextInputType.multiline,
-                expands: true,
-                style: FluentTheme.of(context).dialogTheme.bodyStyle,
-                placeholder: "",
-              ),
+              child: LayoutBuilder(builder: (context, constraints) {
+                currentWidth = constraints.maxWidth - 20;
+                print('currentWidth: $currentWidth');
+                return TextBox(
+                  readOnly: isActive,
+                  maxLines: null,
+                  autofocus: true,
+                  autocorrect: false,
+                  strutStyle: StrutStyle(
+                    fontSize: 14,
+                    height: (20 / 14),
+                  ),
+                  textAlignVertical: TextAlignVertical.top,
+                  controller: textController,
+                  scrollController: textScrollController,
+                  textInputAction: TextInputAction.newline,
+                  keyboardType: TextInputType.multiline,
+                  expands: true,
+                  style: TextStyle(
+                    fontFamily: 'RobotoMono',
+                    fontSize: 14,
+                    fontWeight: FontWeight.w300,
+                    height: (20 / 14),
+                  ),
+                  placeholder: "",
+                );
+              }),
             );
           });
         })
