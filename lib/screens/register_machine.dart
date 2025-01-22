@@ -1,8 +1,7 @@
-import 'dart:convert';
+import 'dart:html';
 
-import 'package:file_picker/file_picker.dart';
-import 'package:file_saver/file_saver.dart';
 import 'package:fluent_ui/fluent_ui.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_remasp/globals.dart';
 import 'package:flutter_remasp/providers/locale_provider.dart';
@@ -55,38 +54,29 @@ class RegisterMachine extends StatelessWidget {
                           ),
                           onPressed: isActive
                               ? null
-                              : () async => {
-                                    // Save the current content of textController
-                                    await FileSaver.instance.saveAs(
-                                      name: 'remasp',
-                                      bytes: utf8.encode(textController.text),
-                                      ext: '.txt',
-                                      mimeType: MimeType.text,
-                                    )
-                                  }),
-                      IconButton(
-                          icon: Icon(
-                            FluentIcons.open_file,
-                            size: 20,
-                          ),
-                          onPressed: isActive
-                              ? null
                               : () async {
-                                  FilePickerResult? result =
-                                      await FilePicker.platform.pickFiles(
-                                    type: FileType.custom,
-                                    readSequential: true,
-                                    withData: true,
-                                    allowedExtensions: ['txt'],
+                                  // Save the current content of textController
+                                  // Copy current URL to clipboard
+                                  final url = window.location.href;
+                                  await Clipboard.setData(
+                                      ClipboardData(text: url));
+                                  // Show a dialog to the user
+                                  showDialog(
+                                    context: context,
+                                    builder: (context) => ContentDialog(
+                                      title: Text('URL copied to clipboard'),
+                                      content: Text(
+                                          'The current URL has been copied to your clipboard.'),
+                                      actions: [
+                                        Button(
+                                          onPressed: () {
+                                            Navigator.of(context).pop();
+                                          },
+                                          child: Text('OK'),
+                                        ),
+                                      ],
+                                    ),
                                   );
-                                  if (result != null) {
-                                    String? contentText = utf8.decode(result
-                                            .files.firstOrNull?.bytes
-                                            ?.toList() ??
-                                        []);
-
-                                    textController.text = contentText ?? '';
-                                  }
                                 }),
                       Spacer(),
                       IconButton(

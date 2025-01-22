@@ -31,8 +31,14 @@
 
   <title>flutter_remasp</title>
   <link rel="manifest" href="manifest.json">
+
 </head>
 <body>
   <script src="flutter_bootstrap.js" async></script>
+  <script>document.addEventListener('keydown', function(event) {
+    if (event.ctrlKey && event.key === 's') {
+      event.preventDefault();
+    }
+  });</script>
 </body>
 </html>
